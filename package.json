@@ -1,0 +1,10 @@
+{
+  "name": "leads-2-gold-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix leads-2-gold-main",
+    "build": "npm run build --prefix leads-2-gold-main",
+    "preview": "npm run preview --prefix leads-2-gold-main"
+  }
+}
+

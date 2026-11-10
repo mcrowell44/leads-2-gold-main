@@ -69,5 +69,5 @@ node index.js
 ### Deploy Supabase MCP Edge Function
 ```bash
 cd leads-2-gold-main
-supabase functions deploy mcp --no-verify-jwt
+npx supabase functions deploy mcp --no-verify-jwt
 ```

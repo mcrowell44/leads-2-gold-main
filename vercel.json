@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd leads-2-gold-main && npm run build",
+  "outputDirectory": "leads-2-gold-main/dist",
+  "installCommand": "cd leads-2-gold-main && npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
