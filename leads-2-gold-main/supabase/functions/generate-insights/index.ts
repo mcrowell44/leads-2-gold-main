@@ -6,72 +6,60 @@ const corsHeaders = {
 }
 
 const PRODUCT_CATALOG = {
-  reputation: {
-    name: "Reputation Management",
-    description: "AI-powered Google review response system for present and past reviews, plus outreach to database for past customer reviews",
-    bestFor: ["active Google reviews", "review response automation", "customer feedback management", "reputation building", "past customer outreach"],
-    priority: "High priority for businesses with active Google reviews"
-  },
-  smartWebsites: {
-    name: "Smart Websites",
-    description: "Automated websites with marketing, social engagement, lead capture, nurturing, web design, CRM, and advertising - all automated",
-    bestFor: ["no website", "low Google activity", "lead capture", "marketing automation", "social engagement", "web design", "CRM integration", "advertising"],
-    priority: "High priority for businesses without website or low activity on Google page"
-  },
-  energy: {
-    name: "EnergyChoice.us",
-    description: "Energy procurement and cost reduction solutions",
-    bestFor: ["high energy costs", "utility management", "sustainability goals"]
-  },
   cdmweb: {
-    name: "CDMWeb.store",
-    description: "Professional web development, e-commerce, SEO optimization, and digital branding hub",
-    bestFor: ["web development", "e-commerce", "SEO", "digital branding", "online storefront"]
+    name: "CDMWeb.store (cdmweb.store)",
+    description: "Custom software development, IT staffing & dedicated remote/AI developers, web applications, e-commerce, and digital branding",
+    bestFor: ["custom software development", "IT staffing", "remote developers", "AI developers", "web development", "e-commerce", "SEO", "digital branding", "client portals"]
   },
   aibizpro: {
     name: "AIBizPro (aibizpro.cdmweb.store)",
-    description: "AI-powered business solutions: GoHighLevel CRM, Smart Websites, Virtual AI Agents, AI Phone Agents, Reputation Management, Voice & Conversation Agents",
-    bestFor: ["lead generation", "online visibility", "social media", "CRM", "marketing automation", "reputation management", "AI agents", "voice agents", "conversation agents"]
+    description: "GoHighLevel CRM plans, websites & automation for SMBs, 24/7 AI agent text and phone conversation, social media management, automated review collection",
+    bestFor: ["GoHighLevel CRM", "SMB automation", "AI phone agents", "AI text agents", "social media management", "reputation management", "lead capture", "automated follow-ups"]
+  },
+  energy: {
+    name: "EnergyChoice.us (energychoice.us)",
+    description: "Commercial energy procurement and rate reduction (10-30% utility cost savings in deregulated energy markets)",
+    bestFor: ["high energy costs", "commercial electricity", "commercial natural gas", "utility management", "cost reduction"]
+  },
+  fractionalSales: {
+    name: "Fractional VP of Sales & Prospecting (CDM)",
+    description: "Executive sales leadership, outbound B2B prospecting campaigns, sales team management, and pipeline revenue acceleration",
+    bestFor: ["B2B prospecting", "sales leadership", "outbound sales", "sales team management", "closing deals", "pipeline growth"]
+  },
+  voiceAgents: {
+    name: "AIBizPro 24/7 AI Voice & Phone Agents",
+    description: "Conversational voice AI answering inbound customer calls, handling after-hours inquiries, qualifying leads, and booking appointments",
+    bestFor: ["missed calls", "after-hours engagement", "lead qualification", "appointment booking", "customer follow-up", "dispatch"]
+  },
+  reputation: {
+    name: "AIBizPro Reputation & Review Automation",
+    description: "Automated Google review requests sent to past customer databases, plus AI-powered review responses to boost local Google rank",
+    bestFor: ["active Google reviews", "review response automation", "customer feedback management", "reputation building", "past customer outreach"]
+  },
+  smartWebsites: {
+    name: "AIBizPro Smart Websites",
+    description: "Automated websites with built-in marketing, social engagement, lead capture, nurturing, and GoHighLevel CRM integration",
+    bestFor: ["no website", "low Google activity", "lead capture", "marketing automation", "social engagement", "web design", "advertising"]
   },
   insurance: {
     name: "agentdunn.cdmweb.store",
-    description: "Insurance solutions and risk management",
+    description: "Commercial insurance solutions, liability coverage, and business risk management",
     bestFor: ["liability coverage", "business insurance", "risk mitigation"]
-  },
-  sports: {
-    name: "play44sports.com",
-    description: "Sports equipment and athletic supplies",
-    bestFor: ["fitness centers", "sports facilities", "athletic programs"]
-  },
-  recruiting: {
-    name: "play44recruiting.site",
-    description: "Recruiting and talent acquisition platform",
-    bestFor: ["hiring challenges", "staffing needs", "talent pipeline"]
-  },
-  voiceAgents: {
-    name: "AIBizPro Voice & Conversation Agents",
-    description: "AI-powered voice and conversation agents through GoHighLevel for 24/7 customer engagement, lead qualification, and appointment booking",
-    bestFor: ["missed calls", "after-hours engagement", "lead qualification", "appointment booking", "customer follow-up"]
-  },
-  crm: {
-    name: "GoHighLevel",
-    description: "All-in-one CRM and marketing automation platform",
-    bestFor: ["customer retention", "marketing automation", "appointment scheduling", "reputation management"]
   },
   powerPlatform: {
     name: "Microsoft Power Platform & Azure (enterprise.crowell-randolph.com)",
-    description: "Microsoft Preferred Partner delivering Power BI, Azure cloud, Microsoft Copilot, Azure Data Lakes, Power Apps, Power Pages, and Power Automate with hands-on training and implementation",
-    bestFor: ["business intelligence", "data analytics", "Microsoft 365 shops", "legacy system modernization", "spreadsheet chaos", "internal apps", "external portals", "Copilot rollout", "data lakes"]
+    description: "Microsoft Preferred Partner delivering Power BI dashboards, Azure cloud, Copilot rollout, Power Apps, and Power Automate workflows",
+    bestFor: ["business intelligence", "data analytics", "Microsoft 365 shops", "legacy system modernization", "internal apps", "Copilot rollout"]
   },
   uniscan: {
     name: "UniScan (uniscan.crowell-randolph.com)",
     description: "Uniform ordering platform and digital company onboarding for uniformed workforces and high-turnover businesses",
-    bestFor: ["uniform ordering", "employee onboarding", "restaurants", "retail", "hospitality", "healthcare", "construction", "franchises", "high turnover"]
+    bestFor: ["uniform ordering", "employee onboarding", "restaurants", "hospitality", "healthcare", "construction", "franchises"]
   },
   aiCourses: {
     name: "AI Courses via MyCityMySchool (aicourses.mycitymyschool.tech)",
-    description: "Employee AI, Copilot, and automation training with certifications - eligible for Texas Workforce Commission reimbursement up to $1,000 per current employee and $2,000 per new hire that completes certification",
-    bestFor: ["employee training", "AI upskilling", "Texas employers", "TWC reimbursement", "workforce development", "new hire training", "certification programs"]
+    description: "Employee AI training and certifications eligible for Texas Workforce Commission reimbursement up to $2,000 per hire",
+    bestFor: ["employee training", "AI upskilling", "Texas employers", "TWC reimbursement", "workforce development"]
   }
 };
 
@@ -240,25 +228,54 @@ Return as JSON array:
 })
 
 function addFallbackInsights(leads: any[], industryName: string): any[] {
+  const lower = (industryName || '').toLowerCase();
+
+  let products = [
+    "AIBizPro GoHighLevel CRM: All-in-one CRM, sales pipelines, marketing automation & 2-way SMS (aibizpro.cdmweb.store)",
+    "AIBizPro 24/7 AI Voice & Phone Agents: Conversational AI answering inbound calls & booking appointments 24/7 (aibizpro.cdmweb.store)",
+    "CDMWeb.store: Custom software development, IT staffing & dedicated remote/AI developers (cdmweb.store)",
+    "EnergyChoice.us: Commercial energy reduction (10-30% electric/gas savings in deregulated areas)",
+    "Fractional VP of Sales: Outbound B2B prospecting, team management & sales pipeline strategy"
+  ];
+
+  if (lower.includes('software') || lower.includes('tech') || lower.includes('it ') || lower.includes('saas') || lower.includes('developer')) {
+    products = [
+      "CDMWeb.store: Custom software development & enterprise application engineering (cdmweb.store)",
+      "CDMWeb.store: IT staffing, remote development teams & dedicated AI developers (cdmweb.store)",
+      "AIBizPro GoHighLevel CRM: Automated B2B sales pipelines & inbound qualification (aibizpro.cdmweb.store)",
+      "Fractional VP of Sales: Outbound B2B prospecting campaigns & sales team architecture"
+    ];
+  } else if (lower.includes('restaurant') || lower.includes('food') || lower.includes('hospitality') || lower.includes('hotel') || lower.includes('bar')) {
+    products = [
+      "EnergyChoice.us: Reduce commercial kitchen electric & gas costs 10-30% in deregulated markets (energychoice.us)",
+      "AIBizPro 24/7 AI Phone & Text Agents: Phone ordering, table reservations & catering inquiries (aibizpro.cdmweb.store)",
+      "AIBizPro Reputation & Social Media Management: Automated Google review growth & social posting (aibizpro.cdmweb.store)",
+      "CDMWeb.store: Online ordering websites, mobile apps & digital branding (cdmweb.store)"
+    ];
+  } else if (lower.includes('plumb') || lower.includes('hvac') || lower.includes('roof') || lower.includes('electric') || lower.includes('contract') || lower.includes('construction') || lower.includes('auto')) {
+    products = [
+      "AIBizPro 24/7 AI Phone Agents: Inbound emergency call answering & after-hours dispatch (aibizpro.cdmweb.store)",
+      "AIBizPro GoHighLevel CRM: Instant SMS follow-ups, quote reminders & dispatch automation (aibizpro.cdmweb.store)",
+      "CDMWeb.store: High-converting contractor website, landing pages & local SEO (cdmweb.store)",
+      "EnergyChoice.us: Commercial utility cost reduction for shops & yards (10-30% savings)"
+    ];
+  }
+
   return leads.map(lead => ({
     ...lead,
-    ai_insights: `${lead.company_name} is a ${industryName} business with potential for growth through digital transformation and operational efficiency improvements.`,
+    ai_insights: `${lead.company_name} is a ${industryName} business with strong potential for growth through AI communication automation, energy cost reduction, and modern software scaling.`,
     pain_points: {
-      operations: ["Manual processes slowing productivity", "Outdated systems needing upgrade"],
-      sales: ["Inconsistent lead flow", "Low online visibility"],
-      management: ["Difficulty tracking performance metrics", "Staff coordination challenges"],
-      customer_relations: ["Review management needs improvement", "Customer follow-up gaps"]
+      operations: ["Manual administrative tasks & missed customer inquiries", "Commercial utility & software operating costs"],
+      sales: ["Inconsistent outbound lead generation", "Slow speed-to-lead on inbound prospects"],
+      management: ["Sales pipeline tracking & team accountability", "Engineering or IT staffing capacity constraints"],
+      customer_relations: ["After-hours customer inquiries going to voicemail", "Google review acquisition and reputation management"]
     },
-    suggested_products: [
-      "AIBizPro GoHighLevel CRM: All-in-one CRM, marketing automation, and reputation management (aibizpro.cdmweb.store)",
-      "AIBizPro Voice & Conversation Agents: 24/7 AI-powered customer engagement & lead qualification (aibizpro.cdmweb.store)",
-      "CDMWeb.store: Professional web development, SEO, and digital branding"
-    ],
+    suggested_products: products,
     sales_strategy: {
       best_contact_time: "Tuesday-Thursday 10am-2pm",
-      opening_angle: "Lead with efficiency gains and ROI",
-      value_proposition: "Help them save time and grow revenue",
-      handle_objections: ["Budget concerns: Offer ROI calculator", "Timing: Start with quick wins"]
+      opening_angle: "Lead with eliminating missed customer calls with 24/7 AI voice agents and commercial energy savings",
+      value_proposition: "Automate lead capture, cut operating overhead by 10-30%, and scale software capabilities",
+      handle_objections: ["Budget concerns: Offer commercial energy audit savings to fund AI tools", "Timing: Deploy quick-win 24/7 phone agent in under 48 hours"]
     },
     best_contact_time: "Tuesday-Thursday 10am-2pm"
   }));

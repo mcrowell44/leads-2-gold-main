@@ -160,56 +160,108 @@ const getIndustryPainPoints = (industry: string): BusinessPainPoints => {
 };
 
 const getIndustrySolutions = (industry: string): string[] => {
-  const solutionsMap: Record<string, string[]> = {
-    "restaurants": [
-      "AIBizPro GoHighLevel CRM - Customer loyalty, order tracking & automated follow-ups (aibizpro.cdmweb.store)",
-      "AIBizPro Reputation Management - AI-powered review responses & customer outreach (aibizpro.cdmweb.store)", 
-      "AIBizPro Smart Websites - Online ordering, lead capture & marketing automation (aibizpro.cdmweb.store)",
-      "EnergyChoice.us - Reduce utility costs 10-30%"
-    ],
-    "auto repair": [
-      "AIBizPro GoHighLevel CRM - Service history tracking & automated reminders (aibizpro.cdmweb.store)",
-      "AIBizPro Reputation Management - Build trust with AI review management (aibizpro.cdmweb.store)",
-      "AIBizPro Virtual AI Agents - Never miss a service inquiry (aibizpro.cdmweb.store)",
-      "CDMWeb.store - Professional website with SEO for local search visibility"
-    ],
-    "real estate": [
-      "AIBizPro GoHighLevel CRM - Lead tracking, drip campaigns & client management (aibizpro.cdmweb.store)",
-      "AIBizPro Smart Websites - Property showcase with lead capture (aibizpro.cdmweb.store)",
-      "AIBizPro Voice & Conversation Agents - AI-powered lead qualification & follow-ups (aibizpro.cdmweb.store)",
-      "CDMWeb.store - Custom real estate website & digital branding"
-    ],
-    "healthcare": [
-      "AIBizPro GoHighLevel CRM - Patient relationship management & automated reminders (aibizpro.cdmweb.store)",
-      "AIBizPro AI Phone Agents - 24/7 appointment scheduling & patient intake (aibizpro.cdmweb.store)",
-      "AIBizPro Reputation Management - HIPAA-aware review management (aibizpro.cdmweb.store)",
-      "CDMWeb.store - Professional healthcare website with patient portal"
-    ],
-    "retail": [
-      "AIBizPro GoHighLevel CRM - Customer data, purchase tracking & loyalty (aibizpro.cdmweb.store)",
-      "CDMWeb.store - E-commerce integration & online store optimization",
-      "AIBizPro Smart Websites - Automated marketing & social engagement (aibizpro.cdmweb.store)",
-      "AIBizPro Voice & Conversation Agents - AI customer engagement & order follow-ups (aibizpro.cdmweb.store)"
-    ],
-    "construction": [
-      "AIBizPro GoHighLevel CRM - Project & client management (aibizpro.cdmweb.store)",
-      "AIBizPro Voice & Conversation Agents - AI lead qualification & scheduling (aibizpro.cdmweb.store)",
-      "CDMWeb.store - Professional contractor website with portfolio showcase",
-      "AIBizPro AI Phone Agents - Capture leads after hours (aibizpro.cdmweb.store)"
-    ],
-    "beauty & wellness": [
-      "AIBizPro GoHighLevel CRM - Client history, preferences & automated booking (aibizpro.cdmweb.store)",
-      "AIBizPro Reputation Management - Boost Google reviews & ratings (aibizpro.cdmweb.store)",
-      "AIBizPro Smart Websites - Portfolio showcase & online booking (aibizpro.cdmweb.store)",
-      "CDMWeb.store - Branded website with social media integration"
-    ]
-  };
-  
-  return solutionsMap[industry.toLowerCase()] || [
-    "AIBizPro GoHighLevel CRM - All-in-one CRM, marketing & reputation management (aibizpro.cdmweb.store)",
-    "AIBizPro Smart Websites - AI-powered website with lead capture & automation (aibizpro.cdmweb.store)",
-    "AIBizPro Voice & Conversation Agents - 24/7 AI customer engagement & lead qualification (aibizpro.cdmweb.store)",
-    "CDMWeb.store - Professional web development, SEO & digital branding"
+  const lower = industry.toLowerCase();
+
+  // Tech, Software, SaaS, IT, Digital Startups, Semiconductors
+  if (lower.includes('software') || lower.includes('tech') || lower.includes('it ') || lower.includes('saas') || lower.includes('developer') || lower.includes('semiconductor') || lower.includes('electronic')) {
+    return [
+      "CDMWeb.store - Custom Software Development & Enterprise Full-Stack Engineering (cdmweb.store)",
+      "CDMWeb.store - IT Staffing, Remote Dev Teams & Dedicated AI Developers (cdmweb.store)",
+      "AIBizPro GoHighLevel CRM - Automated B2B Lead Pipelines, Inbound Qualification & Drip Sequences (aibizpro.cdmweb.store)",
+      "Fractional VP of Sales - Outbound B2B Prospecting, Sales Team Architecture & Management"
+    ];
+  }
+
+  // Contractors & Trades (Plumbing, HVAC, Roofing, Electrical, Construction, Landscaping)
+  if (lower.includes('plumb') || lower.includes('hvac') || lower.includes('roof') || lower.includes('electric') || lower.includes('contract') || lower.includes('construction') || lower.includes('handyman') || lower.includes('pest') || lower.includes('landscap') || lower.includes('tree') || lower.includes('clean')) {
+    return [
+      "AIBizPro 24/7 AI Phone Agents - Never miss an emergency call or after-hours job inquiry (aibizpro.cdmweb.store)",
+      "AIBizPro GoHighLevel CRM - Instant 2-way SMS follow-ups, quote reminders & dispatch automation (aibizpro.cdmweb.store)",
+      "CDMWeb.store - High-converting contractor website, landing pages & local SEO (cdmweb.store)",
+      "EnergyChoice.us - Commercial utility & electric bill reduction (10-30% savings for commercial shops & yards)",
+      "Fractional VP of Sales - Commercial bidding strategy, estimator training & sales management"
+    ];
+  }
+
+  // Restaurants, Bars, Cafes, Hospitality, Hotels
+  if (lower.includes('restaurant') || lower.includes('food') || lower.includes('bar') || lower.includes('cafe') || lower.includes('diner') || lower.includes('bakery') || lower.includes('catering') || lower.includes('hospitality') || lower.includes('hotel')) {
+    return [
+      "EnergyChoice.us - Cut commercial kitchen electric & gas costs by 10-30% in deregulated markets (energychoice.us)",
+      "AIBizPro AI Phone & Text Agents - 24/7 phone order taking, reservation booking & catering inquiries (aibizpro.cdmweb.store)",
+      "AIBizPro Reputation & Social Media Management - Automated Google review growth & social media posting (aibizpro.cdmweb.store)",
+      "CDMWeb.store - Modern mobile-friendly online ordering website & digital branding (cdmweb.store)",
+      "AIBizPro GoHighLevel CRM - VIP diner loyalty programs, birthday promotions & SMS retention campaigns"
+    ];
+  }
+
+  // Auto Repair, Dealerships, Mechanics, Body Shops
+  if (lower.includes('auto') || lower.includes('car') || lower.includes('mechanic') || lower.includes('tire') || lower.includes('body shop') || lower.includes('transmission')) {
+    return [
+      "AIBizPro GoHighLevel CRM - Vehicle service history tracking & automated maintenance recall SMS (aibizpro.cdmweb.store)",
+      "AIBizPro AI Phone Agents - 24/7 phone receptionist for estimate scheduling & appointment intake (aibizpro.cdmweb.store)",
+      "AIBizPro Reputation Management - Automated review requests to past repair customers (aibizpro.cdmweb.store)",
+      "EnergyChoice.us - Commercial shop electricity & utility cost reduction (10-30% savings)",
+      "CDMWeb.store - Professional auto repair website with local Google Map Pack SEO"
+    ];
+  }
+
+  // Real Estate, Mortgages, Brokers, Property Management
+  if (lower.includes('real estate') || lower.includes('realty') || lower.includes('mortgage') || lower.includes('property') || lower.includes('broker') || lower.includes('title')) {
+    return [
+      "AIBizPro GoHighLevel CRM - Real estate pipeline CRM with automated buyer/seller drip nurturing (aibizpro.cdmweb.store)",
+      "AIBizPro AI Voice & Text Agents - Instant 24/7 inbound lead qualification, speed-to-lead & calendar booking (aibizpro.cdmweb.store)",
+      "Fractional VP of Sales - Outbound agent prospecting, lead generation campaigns & sales team management",
+      "CDMWeb.store - Custom real estate websites with MLS/IDX integration & high-converting landing pages (cdmweb.store)"
+    ];
+  }
+
+  // Healthcare, Dental, Medical Clinics, Wellness, Spas
+  if (lower.includes('health') || lower.includes('medical') || lower.includes('dental') || lower.includes('clinic') || lower.includes('doctor') || lower.includes('wellness') || lower.includes('spa') || lower.includes('salon') || lower.includes('therapy')) {
+    return [
+      "AIBizPro AI Phone Agents - 24/7 patient appointment scheduling, cancellation rebooking & FAQs (aibizpro.cdmweb.store)",
+      "AIBizPro GoHighLevel CRM - Automated patient recall, appointment reminder SMS & intake workflows (aibizpro.cdmweb.store)",
+      "AIBizPro Reputation Management - Boost Google ratings with automated post-visit review outreach (aibizpro.cdmweb.store)",
+      "CDMWeb.store - HIPAA-compliant medical practice websites, patient portals & local SEO (cdmweb.store)"
+    ];
+  }
+
+  // Retail, Boutiques, E-Commerce, Local Stores
+  if (lower.includes('retail') || lower.includes('store') || lower.includes('shop') || lower.includes('ecommerce') || lower.includes('e-commerce') || lower.includes('boutique') || lower.includes('apparel')) {
+    return [
+      "CDMWeb.store - Full e-commerce store development, Shopify/WooCommerce optimization & custom inventory sync (cdmweb.store)",
+      "AIBizPro GoHighLevel CRM - Customer retention, SMS VIP flash sales & abandoned checkout recovery (aibizpro.cdmweb.store)",
+      "EnergyChoice.us - Commercial retail electricity & utility cost reduction (10-30% savings)",
+      "AIBizPro Social Media Management - Automated product showcases & social engagement (aibizpro.cdmweb.store)"
+    ];
+  }
+
+  // Manufacturing, Warehousing, Industrial, Supply Chain, Logistics
+  if (lower.includes('manufactur') || lower.includes('warehous') || lower.includes('industr') || lower.includes('logistics') || lower.includes('machin') || lower.includes('distribut') || lower.includes('freight')) {
+    return [
+      "EnergyChoice.us - High-volume commercial energy procurement in deregulated markets (10-30% utility cost reduction)",
+      "CDMWeb.store - Custom enterprise software, ERP/inventory portals & IT staffing (cdmweb.store)",
+      "Fractional VP of Sales - B2B industrial prospecting, territory sales management & pipeline strategy",
+      "AIBizPro GoHighLevel CRM - Commercial account tracking, B2B deal pipelines & contract renewals (aibizpro.cdmweb.store)"
+    ];
+  }
+
+  // Legal, Accounting, Consulting, Financial, B2B Professional Services
+  if (lower.includes('legal') || lower.includes('law') || lower.includes('attorney') || lower.includes('accounting') || lower.includes('cpa') || lower.includes('consult') || lower.includes('financ') || lower.includes('advisory')) {
+    return [
+      "AIBizPro AI Voice & Text Agents - 24/7 prospective client screening & consultation booking (aibizpro.cdmweb.store)",
+      "Fractional VP of Sales - B2B outbound prospecting systems & sales team management for high-ticket retainers",
+      "AIBizPro GoHighLevel CRM - Client onboarding automation, secure document capture & retention tracking (aibizpro.cdmweb.store)",
+      "CDMWeb.store - High-end corporate web development, digital branding & SEO authority building (cdmweb.store)"
+    ];
+  }
+
+  // Default solutions covering the full CDMWeb + AIBizPro + EnergyChoice portfolio
+  return [
+    "AIBizPro GoHighLevel CRM - All-in-one CRM, sales pipelines, marketing automation & 2-way SMS (aibizpro.cdmweb.store)",
+    "AIBizPro 24/7 AI Voice & Phone Agents - Real conversational AI answering calls, booking appointments & qualifying leads (aibizpro.cdmweb.store)",
+    "CDMWeb.store - Custom Software Development, IT Staffing, Remote Dev Teams & Dedicated AI Developers (cdmweb.store)",
+    "EnergyChoice.us - Commercial utility & electricity cost reduction (10-30% savings in deregulated areas)",
+    "Fractional VP of Sales - Outbound B2B prospecting, team management & sales pipeline architecture"
   ];
 };
 

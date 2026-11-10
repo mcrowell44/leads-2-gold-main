@@ -311,81 +311,63 @@ function calculateBestCallTimes(
   };
 }
 
-// Updated Product/Service Catalog with cdmweb.store & aibizpro services
+// Updated Product/Service Catalog with cdmweb.store, aibizpro, energychoice & sales leadership
 const PRODUCT_CATALOG = `
-AVAILABLE PRODUCTS & SERVICES (Marcus Crowell):
+AVAILABLE PRODUCTS & SERVICES (Marcus Crowell / CDMWeb / AIBizPro):
 
-1. **CDMWeb.store** - Professional Web Development & Digital Services Hub
+1. **CDMWeb.store (cdmweb.store)** - Custom Software Development, IT Staffing & Digital Hub
    - URL: https://cdmweb.store
-   - Best for: Businesses needing modern websites, e-commerce, digital transformation
-   - Value: Custom responsive websites, e-commerce stores, SEO optimization, digital branding
-   - Pitch angle: "Is your current website actually generating leads, or just sitting there?"
+   - Core Capabilities:
+     a. **Custom Software Development**: Full-stack web applications, mobile apps, enterprise portals, API integrations, and scalable cloud solutions.
+     b. **IT Staffing & Remote Developer Placement**: Vetted remote software engineers, full-stack developers, frontend/backend specialists to scale engineering teams quickly and cost-effectively.
+     c. **Dedicated AI Developers & Automation Engineers**: Specialized AI engineers building custom LLM apps, workflow automations, RAG pipelines, and intelligent agents.
+     d. **Modern Web Development & E-Commerce**: High-converting responsive websites, custom e-commerce stores, SEO optimization, and digital branding.
+   - Best for: Businesses needing custom software, companies looking to scale tech teams with remote or AI developers, businesses with outdated websites needing real lead conversion.
+   - Pitch angle: "Are your current software and website actively driving qualified revenue, or are you held back by outdated tech and hiring bottlenecks?"
 
-2. **AIBizPro (aibizpro.cdmweb.store)** - AI-Powered Business Solutions
+2. **AIBizPro (aibizpro.cdmweb.store)** - AI-Powered Business, CRM & Communication Solutions
    - URL: https://aibizpro.cdmweb.store
    - Services include:
-     a. **GoHighLevel (GHL) CRM** - All-in-one marketing, CRM, booking, reputation management
-        - Best for: Service businesses juggling multiple tools, needing automated follow-ups
-        - Value: Replace 5+ tools with one platform, automated lead nurturing, SMS/email campaigns
-     b. **Smart Automated Websites** - AI-powered websites with built-in marketing
-        - Best for: Businesses without a website OR with outdated sites with low Google activity
-        - Value: Automated marketing, social engagement, lead capture, nurturing, CRM integration
-        - Includes: Web design, automated advertising, social media management
-     c. **Virtual AI Agents** - 24/7 AI-powered customer service agents
-        - Best for: Businesses missing calls, slow to respond to inquiries, need 24/7 coverage
-        - Value: Never miss a lead, instant response to inquiries, appointment booking
-     d. **AI Phone Agents** - AI-powered phone answering and outbound calling
-        - Best for: Businesses with high call volume, after-hours calls, appointment scheduling
-        - Value: AI answers calls naturally, books appointments, qualifies leads, follows up
-     e. **Reputation Management** - AI-powered Google review management
-        - Best for: Businesses with low/bad reviews, not responding to reviews
-        - Value: AI-powered review responses, automated outreach to past customers for reviews
-        - Focus: Increase Google rating, respond to negative reviews professionally
-     f. **Voice & Conversation Agents** - AI-powered voice and chat agents through GoHighLevel
-        - Best for: Businesses missing calls, needing 24/7 engagement, lead qualification
-        - Value: AI voice agents answer calls, qualify leads, book appointments, follow up via text/chat
+     a. **GoHighLevel (GHL) CRM Plans & Setups**: Complete marketing automation, multi-stage sales pipelines, 2-way SMS/email campaigns, booking calendars, and customer retention systems.
+     b. **Smart Websites & Automation for Small to Medium Businesses**: High-converting websites with built-in marketing automation, social engagement, and 24/7 lead capture.
+     c. **24/7 AI Phone Conversation Agents**: Natural voice AI answering inbound calls, handling after-hours inquiries, qualifying leads, booking appointments, and conducting outbound follow-up calls.
+     d. **24/7 AI Text & Chat Conversation Agents**: Instant intelligent responses across SMS, webchat, and social channels—never letting a prospect go cold.
+     e. **Social Media Management**: Automated social content creation, multi-platform publishing, and brand audience growth.
+     f. **AI Reputation Management**: Automated 5-star Google review outreach to past customer databases and professional AI review responses to boost local ranking.
+   - Best for: Service businesses missing calls, companies needing GoHighLevel CRM setup, businesses needing 24/7 automated lead response and appointment booking.
+   - Pitch angle: "How many customer calls and website leads slip through the cracks after 5 PM and on weekends?"
 
-3. **EnergyChoice.us** - Energy Comparison & Switching
+3. **EnergyChoice.us (energychoice.us)** - Commercial Energy Procurement & Utility Cost Reduction
    - URL: https://energychoice.us
-   - Best for: Businesses with high utility costs (restaurants, retail, manufacturing, gyms)
-   - Value: 10-30% energy savings, green energy options, zero switching fees
+   - Value: Commercial electricity & gas comparison and switching across deregulated energy markets (Texas, Ohio, Pennsylvania, Illinois, New York, New Jersey, Maryland, etc.).
+   - Savings: 10-30% reduction in commercial electric/gas bills, locked fixed-rate protection, zero switching fees or downtime.
+   - Best for: High-energy commercial operations (restaurants, commercial kitchens, manufacturing plants, warehouses, auto shops, laundromats, retail stores, gyms).
+   - Pitch angle: "When was the last time your commercial utility rates were benchmarked against wholesale market pricing? We typically save businesses 10-30% on energy."
 
-4. **AIBizPro Sales Automation** - Built into aibizpro.cdmweb.store
-   - URL: https://aibizpro.cdmweb.store
-   - Best for: Sales teams, B2B companies, lead-heavy businesses
-   - Value: Pipeline management via GoHighLevel, lead tracking, automated follow-ups, AI phone agents for outbound
+4. **Fractional VP of Sales, B2B Prospecting & Team Management (Marcus Crowell / CDM)**
+   - Services:
+     a. **Fractional VP of Sales**: Strategic executive sales leadership, compensation modeling, pipeline velocity optimization, and closing support.
+     b. **B2B Outbound Prospecting & Lead Generation**: Multi-channel cold outreach, targeted verified decision-maker lists, and appointment setting.
+     c. **Sales Team Management & CRM Accountability**: Daily/weekly sales rep tracking, pipeline stage enforcement, and conversion coaching.
+   - Best for: B2B companies, contractors, agencies, and growing businesses needing a predictable outbound sales engine without the $250k executive overhead.
+   - Pitch angle: "Do you have a predictable outbound prospecting system bringing in qualified appointments every week?"
 
-6. **AgentDunn (agentdunn.cdmweb.store)** - Insurance & Financial Services
-   - URL: https://agentdunn.cdmweb.store
-   - Best for: Businesses needing liability coverage, business insurance
-   - Value: Competitive rates, comprehensive coverage, financial planning
-
-7. **Play44Sports.com** - Youth Sports Management
-   - URL: https://play44sports.com
-   - Best for: Sports organizations, gyms, athletic facilities, coaches, travel teams
-
-8. **Microsoft Power Platform & Azure Services** - Microsoft Preferred Partner
+5. **Microsoft Power Platform & Azure Services** - Microsoft Preferred Partner
    - URL: https://enterprise.crowell-randolph.com
-   - Services: Power BI dashboards & analytics, Azure cloud infrastructure, Microsoft Copilot deployment & prompt training, Azure Data Lakes & data warehousing, Power Apps (custom internal apps), Power Pages (external portals), Power Automate workflows
-   - Best for: Mid-market/enterprise clients, businesses drowning in spreadsheets, teams needing BI dashboards, companies modernizing legacy systems, Microsoft 365 shops
-   - Value: Microsoft Preferred Partner training & implementation, unified data lake, AI copilots inside Excel/Teams/Outlook, custom Power Apps replacing manual processes
-   - Pitch angle: "Are your teams still living in Excel while your competitors have Power BI dashboards and Copilot answering questions in seconds?"
+   - Services: Power BI dashboards & analytics, Azure cloud infrastructure, Microsoft Copilot deployment & prompt training, Azure Data Lakes, custom Power Apps & Power Automate workflows.
+   - Best for: Mid-market/enterprise clients, spreadsheet-heavy operations, Microsoft 365 shops modernizing legacy workflows.
 
-9. **UniScan (uniscan.crowell-randolph.com)** - Uniform Ordering & Employee Onboarding
+6. **UniScan (uniscan.crowell-randolph.com)** - Uniform Ordering & Employee Onboarding
    - URL: https://uniscan.crowell-randolph.com
-   - Best for: Restaurants, retail, hospitality, healthcare, construction, franchises - any business with uniformed staff or high turnover
-   - Value: Streamlined uniform ordering, sizing/inventory tracking, digital company onboarding, new-hire paperwork automation
-   - Pitch angle: "How much time does your manager waste ordering uniforms and onboarding each new hire?"
+   - Best for: Restaurants, hospitality, healthcare, construction, retail, franchises—any business with uniformed staff or high turnover.
 
-10. **AI Courses via MyCityMySchool (aicourses.mycitymyschool.tech)** - Employee AI Training & Certification
-    - URL: https://aicourses.mycitymyschool.tech
-    - Best for: Texas employers wanting to upskill staff in AI, Copilot, automation, and Power Platform
-    - Value: Certification programs + **TWC (Texas Workforce Commission) reimbursement**: up to **$1,000 per current employee** and **$2,000 per newly hired employee** who completes certification
-    - Pitch angle: "You can train your entire team on AI and get reimbursed up to $2,000 per new hire by Texas Workforce Commission - here's how."
+7. **AI Courses via MyCityMySchool (aicourses.mycitymyschool.tech)** - Employee AI Training & Certification
+   - URL: https://aicourses.mycitymyschool.tech
+   - Best for: Employers wanting to upskill staff in AI & automation—eligible for **TWC (Texas Workforce Commission) reimbursement**: up to **$1,000 per current employee** and **$2,000 per new hire**.
 
-8. **Play44Recruiting.site** - Athletic Recruiting Services
-   - URL: https://play44recruiting.site
-   - Best for: High schools, travel teams, athletes seeking college exposure
+8. **AgentDunn (agentdunn.cdmweb.store)** - Commercial Insurance & Risk Management
+   - URL: https://agentdunn.cdmweb.store
+   - Best for: Businesses needing general liability, commercial property, and risk mitigation.
 `;
 
 // Generate AI-powered sales intelligence using Gemini
@@ -570,35 +552,39 @@ CRITICAL: Reference REAL data from their reviews, social media, and website. Do 
 function generateFallbackIntelligence(lead: LeadData): any {
   return {
     lead_score: 50,
-    score_reasoning: 'Limited data available - needs manual research',
+    score_reasoning: 'Baseline business profile analyzed - tailored to Marcus Crowell solutions catalog',
     review_pain_points: [],
     operational_pain_points: [
-      { area: 'marketing', pain: 'Digital presence needs assessment', evidence: 'Unable to scrape data', solution_product: 'AIBizPro Smart Websites', solution_url: 'https://aibizpro.cdmweb.store' },
-      { area: 'customer_relations', pain: 'Review management unknown', evidence: 'No review data available', solution_product: 'AIBizPro Reputation Management', solution_url: 'https://aibizpro.cdmweb.store' },
-      { area: 'operations', pain: 'Workflow automation opportunities', evidence: 'Industry typical', solution_product: 'AIBizPro Voice & Conversation Agents', solution_url: 'https://aibizpro.cdmweb.store' }
+      { area: 'marketing', pain: 'Digital presence, automated lead capture & SEO needs assessment', evidence: 'Standard market analysis', solution_product: 'CDMWeb.store & AIBizPro Smart Websites', solution_url: 'https://cdmweb.store' },
+      { area: 'customer_relations', pain: 'Inbound response speed & 24/7 call handling', evidence: 'Missed after-hours inquiries', solution_product: 'AIBizPro AI Voice & Text Conversation Agents', solution_url: 'https://aibizpro.cdmweb.store' },
+      { area: 'operations', pain: 'Commercial utility overhead & software workflow optimization', evidence: 'Commercial operating expenses', solution_product: 'EnergyChoice.us & CDMWeb Custom Software', solution_url: 'https://energychoice.us' },
+      { area: 'sales', pain: 'Consistent outbound lead generation & pipeline predictability', evidence: 'Sales pipeline acceleration', solution_product: 'Fractional VP of Sales & GoHighLevel CRM', solution_url: 'https://aibizpro.cdmweb.store' }
     ],
-    social_media_analysis: { presence_score: 0, platforms_found: [], gaps: ['All platforms'], recommendations: ['Build social presence'] },
+    social_media_analysis: { presence_score: 0, platforms_found: [], gaps: ['Multi-platform automated presence'], recommendations: ['Automate social posting and review outreach via AIBizPro'] },
     recommended_products: [
-      { product_name: 'AIBizPro GoHighLevel CRM', product_url: 'https://aibizpro.cdmweb.store', pitch: 'All-in-one CRM and marketing automation', pain_point_addressed: 'Customer acquisition', priority: 'high', estimated_impact: 'Streamline all marketing in one platform' },
-      { product_name: 'AIBizPro Smart Websites', product_url: 'https://aibizpro.cdmweb.store', pitch: 'AI-powered website with built-in lead capture', pain_point_addressed: 'Digital presence', priority: 'high', estimated_impact: 'Start generating leads online 24/7' },
-      { product_name: 'AIBizPro Virtual AI Agents', product_url: 'https://aibizpro.cdmweb.store', pitch: 'Never miss a customer inquiry again', pain_point_addressed: 'Missed leads', priority: 'medium', estimated_impact: '24/7 customer response' }
+      { product_name: 'AIBizPro GoHighLevel CRM', product_url: 'https://aibizpro.cdmweb.store', pitch: 'All-in-one CRM, sales pipelines, marketing automation & 2-way SMS', pain_point_addressed: 'Customer acquisition & retention', priority: 'high', estimated_impact: 'Streamline all marketing and client follow-ups in one system' },
+      { product_name: 'AIBizPro 24/7 AI Phone & Text Agents', product_url: 'https://aibizpro.cdmweb.store', pitch: 'Conversational voice and text AI answering calls and qualifying leads 24/7', pain_point_addressed: 'Missed calls & slow response times', priority: 'high', estimated_impact: 'Capture 100% of inbound and after-hours leads' },
+      { product_name: 'CDMWeb.store Software & IT Staffing', product_url: 'https://cdmweb.store', pitch: 'Custom software development, IT staffing & dedicated remote/AI developers', pain_point_addressed: 'Technical development & engineering capacity', priority: 'high', estimated_impact: 'Scale engineering and software capabilities with vetted talent' },
+      { product_name: 'EnergyChoice.us Commercial Energy', product_url: 'https://energychoice.us', pitch: '10-30% commercial electricity and natural gas cost reduction in deregulated areas', pain_point_addressed: 'Commercial utility overhead', priority: 'medium', estimated_impact: 'Immediate 10-30% monthly utility savings with zero downtime' },
+      { product_name: 'Fractional VP of Sales & Prospecting', product_url: 'https://cdmweb.store', pitch: 'Outbound B2B prospecting systems, sales team management & pipeline strategy', pain_point_addressed: 'Predictable sales revenue', priority: 'medium', estimated_impact: 'Accelerate deal closing with proven sales executive leadership' }
     ],
     sales_action_plan: [
-      { step: 1, action: 'Research business online', talking_point: 'Understand their current setup', product_to_pitch: 'AIBizPro' },
-      { step: 2, action: 'Cold call with value offer', talking_point: 'Free business audit', product_to_pitch: 'GoHighLevel CRM' }
+      { step: 1, action: 'Initial Discovery & Audit', talking_point: 'Review current website, CRM, energy bills, and phone response workflows', product_to_pitch: 'AIBizPro & EnergyChoice.us' },
+      { step: 2, action: 'High-Impact Quick Win Pitch', talking_point: 'Deploy 24/7 AI Phone Agent or benchmark commercial electric rate for immediate savings', product_to_pitch: 'AI Voice Agent & EnergyChoice.us' },
+      { step: 3, action: 'Scale & Retain', talking_point: 'Implement GoHighLevel CRM automation, custom software, and dedicated developer staffing', product_to_pitch: 'GoHighLevel CRM & CDMWeb.store' }
     ],
     sales_tactics: [
-      'Lead with value - offer a free digital audit of their business',
-      'Reference local competitors succeeding with similar solutions',
-      'Ask about their biggest challenge this quarter'
+      'Lead with immediate cost reduction: Benchmark commercial utility rates with EnergyChoice.us',
+      'Demonstrate the 24/7 AI voice phone agent live—let them experience zero missed calls',
+      'Offer full tech expansion via CDMWeb.store: Custom software development and remote/AI developer staffing'
     ],
     owner_research: {
-      likely_decision_maker: 'Owner/General Manager',
-      approach_angle: 'Focus on time-saving and ROI with AI automation',
+      likely_decision_maker: 'Owner / Managing Partner / General Manager',
+      approach_angle: 'Focus on eliminating missed revenue, reducing utility overhead, and scaling engineering/sales capacity',
       linkedin_search_tip: `Search "${lead.companyName}" + "${lead.location || 'owner'}"`
     },
-    personalized_email: `Hi,\n\nI came across ${lead.companyName} and was impressed by your presence in the ${lead.industryName} space in ${lead.location || 'your area'}.\n\nI help businesses like yours leverage AI-powered tools to automate customer engagement, manage reputation, and capture more leads. Our AIBizPro platform at aibizpro.cdmweb.store includes smart websites, virtual agents, and GoHighLevel CRM - all designed to save you time and grow revenue.\n\nWould you have 15 minutes this week for a quick call? I'd love to share how similar ${lead.industryName} businesses have doubled their lead flow.\n\nBest regards,\nMarcus Crowell\nhttps://aibizpro.cdmweb.store`,
-    call_script_opener: `Hi, this is Marcus Crowell. I help ${lead.industryName} businesses like ${lead.companyName} automate their marketing and never miss a lead with AI - do you have a quick moment?`
+    personalized_email: `Hi,\n\nI came across ${lead.companyName} and wanted to reach out regarding your operations in ${lead.location || 'your area'}.\n\nAt Crowell Digital Marketplace (CDMWeb.store) and AIBizPro (aibizpro.cdmweb.store), we help businesses scale operations and eliminate overhead across three key pillars:\n1. 24/7 AI Voice & Text Conversation Agents + GoHighLevel CRM automation so you never miss an inquiry or referral\n2. Commercial Energy Rate Reduction via EnergyChoice.us (typically cutting electric and gas costs 10-30% in deregulated markets)\n3. Custom Software Development & IT Staffing (providing vetted remote and dedicated AI developers to scale your technology)\n\nWould you have 10-15 minutes this week for a brief call to see how we could support ${lead.companyName}?\n\nBest regards,\nMarcus Crowell\nCDMWeb.store | aibizpro.cdmweb.store | energychoice.us`,
+    call_script_opener: `Hi, this is Marcus Crowell with CDMWeb and AIBizPro. I help businesses like ${lead.companyName} eliminate missed customer calls with 24/7 AI phone agents and reduce commercial overhead—do you have a quick moment?`
   };
 }
 
