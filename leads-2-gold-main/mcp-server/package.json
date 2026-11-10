@@ -1,0 +1,19 @@
+{
+  "name": "leads2gold-mcp-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted MCP server exposing Leads2Gold leads/CRM tools from Supabase to Antigravity and other MCP clients",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "register-antigravity": "node register-antigravity.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

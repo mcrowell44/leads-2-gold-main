@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "leads2gold": {
+      "command": "node",
+      "args": [
+        "c:\\Users\\lenderschoicemarcus\\Downloads\\leads-2-gold-main\\leads-2-gold-main\\mcp-server\\index.js"
+      ],
+      "env": {
+        "SUPABASE_URL": "https://gbkczpjywixipmlaflgy.supabase.co",
+        "SUPABASE_SERVICE_ROLE_KEY": "YOUR_SUPABASE_SERVICE_ROLE_KEY",
+        "MCP_OWNER_USER_ID": "YOUR_SUPABASE_AUTH_USER_UUID"
+      }
+    }
+  }
+}
+

@@ -1,0 +1,37 @@
+project_id = "gbkczpjywixipmlaflgy"
+
+[functions.enrich-lead]
+verify_jwt = false
+
+[functions.ai-chat]
+verify_jwt = false
+
+[functions.generate-email]
+verify_jwt = false
+
+[functions.trigger-webhook]
+verify_jwt = false
+
+[functions.fetch-businesses]
+verify_jwt = false
+
+[functions.generate-industries]
+verify_jwt = false
+
+[functions.generate-insights]
+verify_jwt = false
+
+[functions.generate-leads]
+verify_jwt = false
+
+[functions.generate-suggestions]
+verify_jwt = false
+
+[functions.send-n8n-email]
+verify_jwt = false
+
+[functions.firecrawl-business-search]
+verify_jwt = false
+
+[functions.mcp]
+verify_jwt = false

@@ -1,0 +1,165 @@
+@import url('@fontsource/im-fell-double-pica/400.css');
+@import url('@fontsource/im-fell-double-pica/400-italic.css');
+@import url('@fontsource/noto-serif/400.css');
+@import url('@fontsource/noto-serif/700.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Western Gold Rush Design System */
+
+@layer base {
+  :root {
+    /* Western Theme Colors */
+    --background: 43 53% 87%; /* Pale yellow like old paper */
+    --foreground: 33 25% 29%; /* Dark brown text */
+
+    --card: 41 68% 85%; /* Light cream for cards */
+    --card-foreground: 33 25% 29%;
+
+    --popover: 41 68% 85%;
+    --popover-foreground: 33 25% 29%;
+
+    --primary: 33 25% 29%; /* Dark brown */
+    --primary-foreground: 43 53% 87%;
+
+    --secondary: 25 43% 36%; /* Sienna brown */
+    --secondary-foreground: 43 53% 87%;
+
+    --muted: 41 56% 75%; /* Muted cream */
+    --muted-foreground: 33 25% 50%;
+
+    --accent: 45 100% 42%; /* Pure gold */
+    --accent-foreground: 33 25% 29%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 43 53% 87%;
+
+    --border: 25 43% 56%; /* Medium brown border */
+    --input: 0 0% 100%; /* White input background */
+    --ring: 45 100% 42%; /* Gold focus ring */
+
+    /* Western Specific Colors */
+    --gold: 45 100% 42%;
+    --rust: 25 65% 27%; /* Saddle brown/rust */
+    --rust-hover: 25 43% 36%; /* Lighter rust for hover */
+    --dust: 43 53% 87%; /* Dusty background */
+    --leather: 33 25% 29%; /* Dark leather brown */
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(45 80% 35%));
+    --gradient-western: linear-gradient(180deg, hsl(var(--dust)), hsl(41 68% 85%));
+    
+    /* Shadows */
+    --shadow-western: 8px 8px 0px hsl(var(--leather) / 0.3);
+    --shadow-western-hover: 12px 12px 0px hsl(var(--leather) / 0.4);
+    --shadow-gold-glow: 0 0 20px hsl(var(--gold) / 0.4);
+
+    /* Typography */
+    --font-western: 'IM Fell Double Pica', serif;
+    --font-body: 'Noto Serif', serif;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark western theme */
+    --background: 33 25% 15%; /* Darker brown */
+    --foreground: 43 53% 87%;
+
+    --card: 33 25% 20%; /* Dark leather */
+    --card-foreground: 43 53% 87%;
+
+    --popover: 33 25% 20%;
+    --popover-foreground: 43 53% 87%;
+
+    --primary: 43 53% 87%;
+    --primary-foreground: 33 25% 15%;
+
+    --secondary: 25 43% 25%;
+    --secondary-foreground: 43 53% 87%;
+
+    --muted: 33 25% 25%;
+    --muted-foreground: 41 56% 65%;
+
+    --accent: 45 100% 50%; /* Brighter gold in dark mode */
+    --accent-foreground: 33 25% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 43 53% 87%;
+
+    --border: 25 43% 25%;
+    --input: 33 25% 25%;
+    --ring: 45 100% 50%;
+    --sidebar-background: 33 25% 10%;
+    --sidebar-foreground: 43 53% 87%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 33 25% 15%;
+    --sidebar-accent: 33 25% 20%;
+    --sidebar-accent-foreground: 43 53% 87%;
+    --sidebar-border: 25 43% 25%;
+    --sidebar-ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image: url('/lovable-uploads/3280757b-69ac-475b-9e36-bde690554c6d.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .font-western {
+    font-family: var(--font-western);
+  }
+  
+  .font-body {
+    font-family: var(--font-body);
+  }
+  
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  
+  .bg-gradient-western {
+    background: var(--gradient-western);
+  }
+  
+  .shadow-western {
+    box-shadow: var(--shadow-western);
+  }
+  
+  .shadow-western-hover {
+    box-shadow: var(--shadow-western-hover);
+  }
+  
+  .shadow-gold-glow {
+    box-shadow: var(--shadow-gold-glow);
+  }
+}
