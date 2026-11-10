@@ -1,3 +1,4 @@
+
 # Leads2Gold MCP Server (self-hosted)
 
 A standalone Node MCP server that connects **Antigravity** (and other MCP-compliant clients) to your Supabase project and exposes your leads + CRM data as tools. It runs on **your** machine over stdio — nothing here is built into or deployed by Lovable, and it is not part of the web app bundle.

@@ -31,6 +31,9 @@ interface EnrichedLeadData {
   lead_score?: number;
   pain_points?: string[];
   suggested_products?: string[];
+  sales_action_plan?: Array<{ step: number; action: string; talking_point: string; product_to_pitch: string }>;
+  sales_tactics?: string[];
+  call_script_opener?: string;
   personalized_email?: string;
   best_call_times?: string[];
   ai_insights?: {
@@ -1031,6 +1034,92 @@ export const LeadsManager: React.FC<LeadsManagerProps> = ({
                               </div>
                             )}
                           </div>
+
+                          {/* Dedicated Sales Strategy & Best Plan of Action */}
+                          {(lead.sales_strategy || enriched?.sales_action_plan) && (
+                            <div className="mt-3 pt-3 border-t border-emerald-200 dark:border-emerald-800 bg-emerald-50/70 dark:bg-emerald-950/20 p-3 rounded-md">
+                              <div className="flex items-center gap-1.5 mb-2">
+                                <Target className="h-4 w-4 text-emerald-700 dark:text-emerald-400" />
+                                <span className="font-semibold text-sm text-emerald-800 dark:text-emerald-300">
+                                  Sales Strategy & Best Plan of Action
+                                </span>
+                              </div>
+
+                              {/* Opening Hook */}
+                              {(lead.sales_strategy?.opening_hook || (lead.sales_strategy as any)?.opening_angle || enriched?.call_script_opener) && (
+                                <div className="mb-2 text-xs">
+                                  <span className="font-medium text-emerald-900 dark:text-emerald-200">
+                                    🎯 Opening Hook:
+                                  </span>{" "}
+                                  <span className="text-emerald-800 dark:text-emerald-300 italic">
+                                    "{lead.sales_strategy?.opening_hook || (lead.sales_strategy as any)?.opening_angle || enriched?.call_script_opener}"
+                                  </span>
+                                </div>
+                              )}
+
+                              {/* Step-by-Step Plan of Action */}
+                              {lead.sales_strategy?.plan_of_action && lead.sales_strategy.plan_of_action.length > 0 && (
+                                <div className="mb-2">
+                                  <span className="font-medium text-xs text-emerald-900 dark:text-emerald-200 block mb-1">
+                                    📋 4-Step Execution Plan:
+                                  </span>
+                                  <ul className="space-y-1">
+                                    {lead.sales_strategy.plan_of_action.map((step, sIdx) => (
+                                      <li key={sIdx} className="text-xs text-emerald-800 dark:text-emerald-300 flex items-start gap-1.5">
+                                        <span className="font-bold text-emerald-700 dark:text-emerald-400 flex-shrink-0">✓</span>
+                                        <span>{step}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+
+                              {/* Enriched Sales Action Plan if available */}
+                              {enriched?.sales_action_plan && enriched.sales_action_plan.length > 0 && !lead.sales_strategy?.plan_of_action && (
+                                <div className="mb-2">
+                                  <span className="font-medium text-xs text-emerald-900 dark:text-emerald-200 block mb-1">
+                                    📋 AI Enriched Action Plan:
+                                  </span>
+                                  <ul className="space-y-1">
+                                    {enriched.sales_action_plan.map((item, sIdx) => (
+                                      <li key={sIdx} className="text-xs text-emerald-800 dark:text-emerald-300 flex items-start gap-1.5">
+                                        <span className="font-bold text-emerald-700 dark:text-emerald-400 flex-shrink-0">Step {item.step || sIdx + 1}:</span>
+                                        <span>{item.action} — <em>"{item.talking_point}"</em> ({item.product_to_pitch})</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+
+                              {/* Value Proposition */}
+                              {lead.sales_strategy?.value_proposition && (
+                                <div className="mb-2 text-xs">
+                                  <span className="font-medium text-emerald-900 dark:text-emerald-200">
+                                    💡 Value Proposition:
+                                  </span>{" "}
+                                  <span className="text-emerald-800 dark:text-emerald-300">
+                                    {lead.sales_strategy.value_proposition}
+                                  </span>
+                                </div>
+                              )}
+
+                              {/* Objection Handling */}
+                              {(lead.sales_strategy?.objection_handling || (lead.sales_strategy as any)?.handle_objections) && (
+                                <div className="mt-2 pt-2 border-t border-emerald-200/60 dark:border-emerald-800/60 text-xs">
+                                  <span className="font-medium text-emerald-900 dark:text-emerald-200 block mb-1">
+                                    🛡️ Objection Handling:
+                                  </span>
+                                  <ul className="space-y-1">
+                                    {(lead.sales_strategy.objection_handling || (lead.sales_strategy as any).handle_objections).map((obj: string, oIdx: number) => (
+                                      <li key={oIdx} className="text-xs text-emerald-700 dark:text-emerald-400">
+                                        • {obj}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          )}
                           
                           {/* Busy Times Visualization */}
                           {lead.busy_times && (

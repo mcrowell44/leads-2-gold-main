@@ -141,6 +141,103 @@ const IndustryCard = ({ industry, onSearchIndustry }: IndustryCardProps) => {
     ];
   };
 
+  // Dedicated Sales Strategy & Plan of Action tailored to industry type
+  const getIndustrySalesStrategy = (industryName: string): string[] => {
+    const lower = industryName.toLowerCase();
+
+    if (lower.includes('plumb') || lower.includes('hvac') || lower.includes('roof') || lower.includes('electric') || lower.includes('contract') || lower.includes('construction') || lower.includes('handyman') || lower.includes('pest') || lower.includes('landscap') || lower.includes('tree') || lower.includes('clean')) {
+      return [
+        'Step 1: Deploy AIBizPro 24/7 AI Phone Agent to capture 100% of emergency and after-hours job calls',
+        'Step 2: Connect GoHighLevel CRM for instant 60-second 2-way SMS quote follow-ups and dispatch',
+        'Step 3: Run EnergyChoice utility bill audit to cut shop/yard electric rates 10-30% in deregulated areas',
+        'Step 4: Launch high-converting contractor website & Google Map Pack SEO from CDMWeb.store'
+      ];
+    }
+
+    if (lower.includes('restaurant') || lower.includes('food') || lower.includes('bar') || lower.includes('cafe') || lower.includes('diner') || lower.includes('bakery') || lower.includes('catering') || lower.includes('hospitality') || lower.includes('hotel')) {
+      return [
+        'Step 1: Free EnergyChoice utility audit to slash commercial kitchen electric & gas costs by 10-30%',
+        'Step 2: Deploy AIBizPro 24/7 AI Phone & Text Agent for hands-free phone orders & reservation bookings',
+        'Step 3: Launch automated 5-star Google review collection to dominate local neighborhood searches',
+        'Step 4: Implement GoHighLevel VIP diner loyalty & automated slow-night SMS flash promos'
+      ];
+    }
+
+    if (lower.includes('software') || lower.includes('tech') || lower.includes('it ') || lower.includes('saas') || lower.includes('developer') || lower.includes('semiconductor') || lower.includes('electronic')) {
+      return [
+        'Step 1: Fractional VP of Sales B2B prospecting architecture & outbound pipeline acceleration',
+        'Step 2: Scale engineering capacity with CDMWeb dedicated remote developers & AI engineers',
+        'Step 3: Automate inbound B2B qualification & demo booking in AIBizPro GoHighLevel CRM',
+        'Step 4: Deploy Microsoft Power BI analytics & Azure infrastructure from enterprise.crowell-randolph.com'
+      ];
+    }
+
+    if (lower.includes('auto') || lower.includes('car') || lower.includes('mechanic') || lower.includes('tire') || lower.includes('body shop')) {
+      return [
+        'Step 1: Deploy AIBizPro AI phone receptionist to take estimate calls and book bay drop-offs 24/7',
+        'Step 2: Automate recurring maintenance recall SMS (oil/brakes/tires) in GoHighLevel CRM',
+        'Step 3: Launch automated review outreach to turn completed repairs into 5-star Google ratings',
+        'Step 4: Reduce commercial garage & shop electricity overhead via EnergyChoice.us'
+      ];
+    }
+
+    if (lower.includes('real estate') || lower.includes('realty') || lower.includes('mortgage') || lower.includes('property') || lower.includes('broker')) {
+      return [
+        'Step 1: Implement AIBizPro AI Voice/Text agents for sub-30-second inbound speed-to-lead qualification',
+        'Step 2: Automate 12-month buyer/seller drip nurturing & pipeline tracking in GoHighLevel CRM',
+        'Step 3: Fractional VP of Sales outbound prospecting campaigns & agent team management',
+        'Step 4: Launch high-converting IDX property showcase website from CDMWeb.store'
+      ];
+    }
+
+    if (lower.includes('health') || lower.includes('medical') || lower.includes('dental') || lower.includes('clinic') || lower.includes('doctor') || lower.includes('wellness') || lower.includes('spa') || lower.includes('salon')) {
+      return [
+        'Step 1: Deploy AIBizPro 24/7 AI phone receptionist for appointment booking, rebooking & patient intake',
+        'Step 2: Reduce no-shows by 40% with GoHighLevel automated 2-way SMS reminders & digital intake',
+        'Step 3: Automated HIPAA-compliant Google review collection to elevate clinic reputation',
+        'Step 4: Modern patient portal & high-speed healthcare web architecture from CDMWeb.store'
+      ];
+    }
+
+    if (lower.includes('manufactur') || lower.includes('warehous') || lower.includes('industr') || lower.includes('logistics') || lower.includes('machin') || lower.includes('distribut')) {
+      return [
+        'Step 1: EnergyChoice high-volume commercial energy procurement (10-30% rate reduction)',
+        'Step 2: Custom ERP/inventory software development & dedicated IT staffing via CDMWeb.store',
+        'Step 3: Fractional VP of Sales outbound industrial B2B prospecting & contract acquisition',
+        'Step 4: Staff AI training via MyCityMySchool with Texas Workforce Commission reimbursement'
+      ];
+    }
+
+    if (lower.includes('legal') || lower.includes('law') || lower.includes('attorney') || lower.includes('accounting') || lower.includes('cpa') || lower.includes('consult') || lower.includes('financ')) {
+      return [
+        'Step 1: AIBizPro AI Voice & Text agent for 24/7 prospective client intake & consultation pre-screening',
+        'Step 2: Fractional VP of Sales high-ticket B2B retainer prospecting systems & outbound campaigns',
+        'Step 3: Automated secure document intake workflows & retention in GoHighLevel CRM',
+        'Step 4: High-end corporate brand authority & modern web architecture from CDMWeb.store'
+      ];
+    }
+
+    if (lower.includes('retail') || lower.includes('store') || lower.includes('shop') || lower.includes('ecommerce') || lower.includes('e-commerce') || lower.includes('boutique')) {
+      return [
+        'Step 1: Custom e-commerce store & real-time inventory synchronization from CDMWeb.store',
+        'Step 2: Automated VIP SMS flash sales & cart recovery sequences in GoHighLevel CRM',
+        'Step 3: Commercial store utility & electric rate reduction via EnergyChoice.us (10-30% savings)',
+        'Step 4: Automated social media posting & Google review campaigns via AIBizPro'
+      ];
+    }
+
+    return [
+      'Step 1: Deploy AIBizPro 24/7 AI Voice Agent to eliminate missed customer calls & book appointments',
+      'Step 2: Streamline lead follow-up & pipeline management with AIBizPro GoHighLevel CRM',
+      'Step 3: Benchmark commercial utility rates with EnergyChoice.us for 10-30% overhead savings',
+      'Step 4: Scale technology with custom software development & IT staffing from CDMWeb.store'
+    ];
+  };
+
+  const effectiveStrategies = (industry.strategicRecommendations && industry.strategicRecommendations.length > 0)
+    ? industry.strategicRecommendations
+    : getIndustrySalesStrategy(industry.name);
+
   useEffect(() => {
     const predefinedSuggestions = getIndustrySuggestions(industry.name);
     setSuggestions(predefinedSuggestions);
@@ -194,18 +291,18 @@ const IndustryCard = ({ industry, onSearchIndustry }: IndustryCardProps) => {
         </div>
       )}
 
-      {/* Strategic Recommendations */}
-      {industry.strategicRecommendations && industry.strategicRecommendations.length > 0 && (
+      {/* Strategic Recommendations / Plan of Action */}
+      {effectiveStrategies && effectiveStrategies.length > 0 && (
         <div className="mb-3 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
           <div className="flex items-center gap-2 mb-2">
             <Target className="w-4 h-4 text-emerald-700" />
-            <span className="text-sm font-semibold text-emerald-800">Sales Strategy</span>
+            <span className="text-sm font-semibold text-emerald-800">Sales Strategy & Plan of Action</span>
           </div>
-          <ul className="text-xs text-emerald-900 space-y-1">
-            {industry.strategicRecommendations.slice(0, 3).map((rec, index) => (
-              <li key={index} className="flex items-start gap-1">
-                <span className="text-emerald-600 mt-0.5">✓</span>
-                <span>{rec}</span>
+          <ul className="text-xs text-emerald-900 space-y-1.5">
+            {effectiveStrategies.slice(0, 4).map((rec, index) => (
+              <li key={index} className="flex items-start gap-1.5">
+                <span className="text-emerald-700 font-bold mt-0.5 flex-shrink-0">✓</span>
+                <span className="leading-tight">{rec}</span>
               </li>
             ))}
           </ul>

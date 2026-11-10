@@ -238,6 +238,15 @@ function addFallbackInsights(leads: any[], industryName: string): any[] {
     "Fractional VP of Sales: Outbound B2B prospecting, team management & sales pipeline strategy"
   ];
 
+  let planOfAction = [
+    "Step 1: Deploy AIBizPro 24/7 AI Voice Agent to eliminate missed customer calls and book appointments around the clock.",
+    "Step 2: Streamline lead follow-up, pipelines, and 2-way SMS in AIBizPro GoHighLevel CRM.",
+    "Step 3: Benchmark commercial utility rates with EnergyChoice.us for 10-30% overhead savings in deregulated areas.",
+    "Step 4: Scale technology with custom software development and IT staffing from CDMWeb.store."
+  ];
+  let openingAngle = "Lead with eliminating missed customer calls with 24/7 AI voice agents and commercial energy savings";
+  let valueProp = "Automate lead capture, cut operating overhead by 10-30%, and scale software capabilities";
+
   if (lower.includes('software') || lower.includes('tech') || lower.includes('it ') || lower.includes('saas') || lower.includes('developer')) {
     products = [
       "CDMWeb.store: Custom software development & enterprise application engineering (cdmweb.store)",
@@ -245,6 +254,14 @@ function addFallbackInsights(leads: any[], industryName: string): any[] {
       "AIBizPro GoHighLevel CRM: Automated B2B sales pipelines & inbound qualification (aibizpro.cdmweb.store)",
       "Fractional VP of Sales: Outbound B2B prospecting campaigns & sales team architecture"
     ];
+    planOfAction = [
+      "Step 1: Fractional VP of Sales B2B outbound prospecting architecture and sales cadence deployment.",
+      "Step 2: Scale engineering sprint capacity with CDMWeb dedicated remote developers and AI engineers.",
+      "Step 3: Automate inbound lead qualification, speed-to-lead, and calendar booking in AIBizPro GoHighLevel CRM.",
+      "Step 4: Deploy enterprise Power BI executive dashboards and Azure cloud infrastructure from enterprise.crowell-randolph.com."
+    ];
+    openingAngle = "Outbound B2B prospecting frameworks to accelerate pipeline velocity without executive headcount overhead";
+    valueProp = "Accelerate pipeline velocity with turnkey B2B outbound prospecting and scale engineering bandwidth on demand";
   } else if (lower.includes('restaurant') || lower.includes('food') || lower.includes('hospitality') || lower.includes('hotel') || lower.includes('bar')) {
     products = [
       "EnergyChoice.us: Reduce commercial kitchen electric & gas costs 10-30% in deregulated markets (energychoice.us)",
@@ -252,6 +269,14 @@ function addFallbackInsights(leads: any[], industryName: string): any[] {
       "AIBizPro Reputation & Social Media Management: Automated Google review growth & social posting (aibizpro.cdmweb.store)",
       "CDMWeb.store: Online ordering websites, mobile apps & digital branding (cdmweb.store)"
     ];
+    planOfAction = [
+      "Step 1: Free EnergyChoice utility rate audit to slash commercial kitchen electricity and natural gas bills by 10-30%.",
+      "Step 2: Deploy AIBizPro 24/7 AI Phone & Text Agent for hands-free phone orders, catering inquiries, and table reservations.",
+      "Step 3: Launch automated 5-star Google review collection to dominate local 'food near me' searches.",
+      "Step 4: Implement GoHighLevel VIP diner loyalty, birthday clubs, and slow-night SMS flash promos."
+    ];
+    openingAngle = "Slash commercial kitchen utility rates by 10-30% with zero downtime, and automate takeout phone orders with 24/7 voice AI";
+    valueProp = "Slash kitchen electric and gas bills by 10-30% while automating takeout phone orders and building an owned diner SMS database";
   } else if (lower.includes('plumb') || lower.includes('hvac') || lower.includes('roof') || lower.includes('electric') || lower.includes('contract') || lower.includes('construction') || lower.includes('auto')) {
     products = [
       "AIBizPro 24/7 AI Phone Agents: Inbound emergency call answering & after-hours dispatch (aibizpro.cdmweb.store)",
@@ -259,6 +284,14 @@ function addFallbackInsights(leads: any[], industryName: string): any[] {
       "CDMWeb.store: High-converting contractor website, landing pages & local SEO (cdmweb.store)",
       "EnergyChoice.us: Commercial utility cost reduction for shops & yards (10-30% savings)"
     ];
+    planOfAction = [
+      "Step 1: Deploy AIBizPro 24/7 AI Phone Agent to capture 100% of emergency and after-hours job calls with instant booking and dispatch.",
+      "Step 2: Connect GoHighLevel CRM for instant 60-second 2-way SMS quote follow-up and appointment confirmation.",
+      "Step 3: Run EnergyChoice commercial energy bill audit to cut shop, warehouse, and yard electric/gas bills by 10-30%.",
+      "Step 4: Upgrade to high-converting contractor website & Google Map Pack SEO engineered by CDMWeb.store."
+    ];
+    openingAngle = "Capture 100% of missed after-hours emergency calls and automate quote follow-ups within 60 seconds";
+    valueProp = "Never miss an emergency job again, automate quote follow-ups within 60 seconds, and fund the upgrades with 10-30% commercial utility savings";
   }
 
   return leads.map(lead => ({
@@ -273,8 +306,9 @@ function addFallbackInsights(leads: any[], industryName: string): any[] {
     suggested_products: products,
     sales_strategy: {
       best_contact_time: "Tuesday-Thursday 10am-2pm",
-      opening_angle: "Lead with eliminating missed customer calls with 24/7 AI voice agents and commercial energy savings",
-      value_proposition: "Automate lead capture, cut operating overhead by 10-30%, and scale software capabilities",
+      opening_angle: openingAngle,
+      plan_of_action: planOfAction,
+      value_proposition: valueProp,
       handle_objections: ["Budget concerns: Offer commercial energy audit savings to fund AI tools", "Timing: Deploy quick-win 24/7 phone agent in under 48 hours"]
     },
     best_contact_time: "Tuesday-Thursday 10am-2pm"

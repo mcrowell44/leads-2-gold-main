@@ -8,6 +8,14 @@ export interface BusinessPainPoints {
   customer_relations: string[];
 }
 
+export interface SalesStrategy {
+  best_contact_time?: string;
+  opening_hook: string;
+  plan_of_action: string[];
+  value_proposition: string;
+  objection_handling: string[];
+}
+
 export interface Lead {
   id?: string;
   industry_name?: string;
@@ -25,6 +33,7 @@ export interface Lead {
   business_type?: string;
   pain_points?: string[] | BusinessPainPoints;
   suggested_products?: string[];
+  sales_strategy?: SalesStrategy;
   best_contact_time?: string;
   google_activity_score?: number;
   ai_insights?: string;
@@ -93,6 +102,7 @@ const convertBusinessToLead = (business: any, industryName: string): Lead => {
     lead_source: "google_places",
     pain_points: getIndustryPainPoints(industryName),
     suggested_products: getIndustrySolutions(industryName),
+    sales_strategy: getIndustrySalesStrategy(industryName),
     best_contact_time: getBusinessHours(business.opening_hours?.open_now ?? business.open_now),
     busy_times: business.busy_times || undefined,
     operating_hours: business.operating_hours || undefined,
@@ -265,6 +275,175 @@ const getIndustrySolutions = (industry: string): string[] => {
   ];
 };
 
+export const getIndustrySalesStrategy = (industry: string): SalesStrategy => {
+  const lower = industry.toLowerCase();
+
+  // Contractors & Trades
+  if (lower.includes('plumb') || lower.includes('hvac') || lower.includes('roof') || lower.includes('electric') || lower.includes('contract') || lower.includes('construction') || lower.includes('handyman') || lower.includes('pest') || lower.includes('landscap') || lower.includes('tree') || lower.includes('clean')) {
+    return {
+      best_contact_time: "Tuesday - Thursday, 6:30 AM - 8:30 AM or 4:30 PM - 6:30 PM (before/after field dispatches)",
+      opening_hook: "Most contractors lose 30-40% of emergency revenue to missed after-hours calls and delayed quote follow-ups.",
+      plan_of_action: [
+        "Step 1: Deploy AIBizPro 24/7 AI Phone Agent to capture 100% of emergency and after-hours job calls with instant booking and dispatch.",
+        "Step 2: Connect GoHighLevel CRM for instant 60-second 2-way SMS quote follow-up and appointment confirmation.",
+        "Step 3: Run EnergyChoice commercial energy bill audit to cut shop, warehouse, and yard electric/gas bills by 10-30%.",
+        "Step 4: Upgrade to high-converting contractor website & Google Map Pack SEO engineered by CDMWeb.store."
+      ],
+      value_proposition: "Never miss an emergency job again, automate quote follow-ups within 60 seconds, and fund the upgrades with 10-30% commercial utility savings.",
+      objection_handling: [
+        "Objection: 'We already have an answering service' -> Rebuttal: Traditional call centers put customers on hold and can't book directly into dispatch software; our AI schedules jobs live 24/7 at a fraction of the cost.",
+        "Objection: 'Too busy in the field' -> Rebuttal: That is exactly why our 24/7 voice agent takes phone tags and dispatch off your hands in under 48 hours."
+      ]
+    };
+  }
+
+  // Restaurants, Hospitality & Food
+  if (lower.includes('restaurant') || lower.includes('food') || lower.includes('bar') || lower.includes('cafe') || lower.includes('diner') || lower.includes('bakery') || lower.includes('catering') || lower.includes('hospitality') || lower.includes('hotel')) {
+    return {
+      best_contact_time: "Tuesday - Thursday, 2:00 PM - 4:00 PM (between lunch and dinner rushes)",
+      opening_hook: "Commercial kitchen utility rates have jumped 25%—our utility audit benchmarks your meters against wholesale pricing with zero switching downtime.",
+      plan_of_action: [
+        "Step 1: Free EnergyChoice utility rate audit to slash commercial kitchen electricity and natural gas bills by 10-30%.",
+        "Step 2: Deploy AIBizPro 24/7 AI Phone & Text Agent for hands-free phone orders, catering inquiries, and table reservations.",
+        "Step 3: Launch automated 5-star Google review collection to dominate local 'food near me' searches.",
+        "Step 4: Implement GoHighLevel VIP diner loyalty, birthday clubs, and slow-night SMS flash promos."
+      ],
+      value_proposition: "Slash kitchen electric and gas bills by 10-30% while automating takeout phone orders and building an owned diner SMS database.",
+      objection_handling: [
+        "Objection: 'Margins are too tight for new software' -> Rebuttal: EnergyChoice requires zero upfront investment and produces immediate monthly utility savings that fund your AI tools.",
+        "Objection: 'We rely on DoorDash/UberEats' -> Rebuttal: Third-party delivery takes 25-30% commissions; our AI direct phone ordering keeps 100% of the margin in your pocket."
+      ]
+    };
+  }
+
+  // Tech, Software, SaaS & IT
+  if (lower.includes('software') || lower.includes('tech') || lower.includes('it ') || lower.includes('saas') || lower.includes('developer') || lower.includes('semiconductor') || lower.includes('electronic')) {
+    return {
+      best_contact_time: "Tuesday - Thursday, 9:30 AM - 11:30 AM or 1:30 PM - 3:30 PM",
+      opening_hook: "Are your account executives bogged down in manual prospecting instead of demoing and closing qualified opportunities?",
+      plan_of_action: [
+        "Step 1: Fractional VP of Sales B2B outbound prospecting architecture and sales cadence deployment.",
+        "Step 2: Scale engineering sprint capacity with CDMWeb dedicated remote developers and AI engineers.",
+        "Step 3: Automate inbound lead qualification, speed-to-lead, and calendar booking in AIBizPro GoHighLevel CRM.",
+        "Step 4: Deploy enterprise Power BI executive dashboards and Azure cloud infrastructure from enterprise.crowell-randolph.com."
+      ],
+      value_proposition: "Accelerate pipeline velocity with turnkey B2B outbound prospecting and scale engineering bandwidth on demand without full-time overhead.",
+      objection_handling: [
+        "Objection: 'We do sales in-house' -> Rebuttal: Our Fractional VP of Sales leadership augments your team with proven outbound frameworks and pipeline acceleration without executive headcount overhead.",
+        "Objection: 'We have enough engineers' -> Rebuttal: We also supply flexible specialized AI and full-stack talent for surge capacity during critical product releases."
+      ]
+    };
+  }
+
+  // Auto Repair & Mechanics
+  if (lower.includes('auto') || lower.includes('car') || lower.includes('mechanic') || lower.includes('tire') || lower.includes('body shop') || lower.includes('transmission')) {
+    return {
+      best_contact_time: "Tuesday - Thursday, 8:30 AM - 10:00 AM or 1:30 PM - 3:00 PM",
+      opening_hook: "Over 65% of drivers who call an auto repair shop for an estimate will immediately call the next shop if they reach voicemail.",
+      plan_of_action: [
+        "Step 1: Deploy AIBizPro AI phone receptionist to take estimate calls and book bay drop-offs 24/7.",
+        "Step 2: Automate recurring maintenance recall SMS (oil changes, brake inspections, tire rotations) in GoHighLevel CRM.",
+        "Step 3: Launch automated review outreach upon vehicle pickup to accumulate 5-star Google reviews.",
+        "Step 4: Benchmark commercial bay lighting, compressor power, and heating costs for 10-30% savings via EnergyChoice.us."
+      ],
+      value_proposition: "Keep repair bays booked weeks in advance with automated customer recalls and 24/7 estimate intake.",
+      objection_handling: [
+        "Objection: 'Service writers answer our phones' -> Rebuttal: When writers are helping a customer at the counter, the phone goes unanswered; AI picks up instantly so you never lose a big repair job.",
+        "Objection: 'Customers only want to talk to mechanics' -> Rebuttal: AI handles routine scheduling, hours, and intake—freeing your mechanics to turn wrenches."
+      ]
+    };
+  }
+
+  // Real Estate & Mortgage
+  if (lower.includes('real estate') || lower.includes('realty') || lower.includes('mortgage') || lower.includes('property') || lower.includes('broker') || lower.includes('title')) {
+    return {
+      best_contact_time: "Monday - Thursday, 8:30 AM - 11:00 AM",
+      opening_hook: "Buyer and seller leads contacted within 60 seconds are 391% more likely to convert than leads contacted after 30 minutes.",
+      plan_of_action: [
+        "Step 1: Implement AIBizPro AI Voice/Text agents for sub-30-second inbound speed-to-lead qualification.",
+        "Step 2: Automate 12-month buyer/seller drip nurturing and pipeline stage tracking in GoHighLevel CRM.",
+        "Step 3: Fractional VP of Sales outbound prospecting campaigns, expired listing cadence, and team management.",
+        "Step 4: Launch high-converting IDX property showcase website from CDMWeb.store."
+      ],
+      value_proposition: "Dominate speed-to-lead with instantaneous AI qualification and keep every buyer and seller engaged for up to 12 months on autopilot.",
+      objection_handling: [
+        "Objection: 'Real estate is relationship-based' -> Rebuttal: The AI does not replace you; it engages and qualifies leads in seconds so you spend 100% of your time with ready-to-transact clients."
+      ]
+    };
+  }
+
+  // Healthcare, Dental & Wellness
+  if (lower.includes('health') || lower.includes('medical') || lower.includes('dental') || lower.includes('clinic') || lower.includes('doctor') || lower.includes('wellness') || lower.includes('spa') || lower.includes('salon')) {
+    return {
+      best_contact_time: "Tuesday - Thursday, 11:30 AM - 1:00 PM (lunch transition)",
+      opening_hook: "Unanswered patient calls and no-shows cost the average clinic between $100,000 to $150,000 in missed billings every year.",
+      plan_of_action: [
+        "Step 1: Deploy AIBizPro 24/7 AI phone receptionist for appointment booking, rebooking & patient intake.",
+        "Step 2: Reduce clinic no-shows by 40% with GoHighLevel automated 2-way SMS reminders & digital intake.",
+        "Step 3: Automated HIPAA-compliant Google review collection to elevate clinic search visibility.",
+        "Step 4: Modern patient portal & high-speed healthcare web architecture engineered by CDMWeb.store."
+      ],
+      value_proposition: "Eliminate missed patient bookings, reduce no-shows by up to 40%, and streamline front-desk operations 24/7.",
+      objection_handling: [
+        "Objection: 'We have front desk staff' -> Rebuttal: Front desk staff gets overwhelmed during morning check-ins; AI manages overflow calls and books patients after-hours when staff is off."
+      ]
+    };
+  }
+
+  // Manufacturing & Logistics
+  if (lower.includes('manufactur') || lower.includes('warehous') || lower.includes('industr') || lower.includes('logistics') || lower.includes('machin') || lower.includes('distribut')) {
+    return {
+      best_contact_time: "Tuesday - Thursday, 7:00 AM - 9:00 AM",
+      opening_hook: "Commercial power and gas procurement represents the fastest immediate 10-30% margin improvement for high-volume facilities.",
+      plan_of_action: [
+        "Step 1: EnergyChoice high-volume commercial energy procurement (10-30% utility rate reduction in deregulated markets).",
+        "Step 2: Custom ERP/inventory software development & dedicated IT staffing via CDMWeb.store.",
+        "Step 3: Fractional VP of Sales outbound industrial B2B prospecting & distributor contract acquisition.",
+        "Step 4: Staff AI training via MyCityMySchool with Texas Workforce Commission reimbursement ($1k-$2k/worker)."
+      ],
+      value_proposition: "Cut commercial utility bills by 10-30% and modernise legacy supply chain software with dedicated engineering talent.",
+      objection_handling: [
+        "Objection: 'We are under existing energy contracts' -> Rebuttal: We analyze your contract expiration dates to lock in wholesale forward rates before market rate hikes occur."
+      ]
+    };
+  }
+
+  // Legal & Financial
+  if (lower.includes('legal') || lower.includes('law') || lower.includes('attorney') || lower.includes('accounting') || lower.includes('cpa') || lower.includes('consult') || lower.includes('financ')) {
+    return {
+      best_contact_time: "Monday - Thursday, 8:00 AM - 9:30 AM or 4:30 PM - 6:00 PM",
+      opening_hook: "High-value prospective clients expect immediate responses; after 5 PM, prospective clients simply call your competitors.",
+      plan_of_action: [
+        "Step 1: AIBizPro AI Voice & Text agent for 24/7 prospective client intake & consultation pre-screening.",
+        "Step 2: Fractional VP of Sales high-ticket B2B retainer prospecting systems & outbound campaigns.",
+        "Step 3: Automated secure document intake workflows & retention in GoHighLevel CRM.",
+        "Step 4: High-end corporate brand authority & modern web architecture from CDMWeb.store."
+      ],
+      value_proposition: "Pre-screen high-value client consultations 24/7 and build a predictable outbound pipeline for premium retainers.",
+      objection_handling: [
+        "Objection: 'We rely exclusively on referrals' -> Rebuttal: Referrals are great, but proactive outbound prospecting and 24/7 intake turn unpredictable referrals into dependable monthly revenue."
+      ]
+    };
+  }
+
+  // Default Sales Strategy
+  return {
+    best_contact_time: "Tuesday - Thursday, 10:00 AM - 2:00 PM",
+    opening_hook: "Most businesses lose qualified leads to delayed follow-ups and overpay 10-30% on commercial electricity and operating overhead.",
+    plan_of_action: [
+      "Step 1: Deploy AIBizPro 24/7 AI Voice Agent to eliminate missed customer calls and book appointments around the clock.",
+      "Step 2: Streamline lead follow-up, pipelines, and 2-way SMS in AIBizPro GoHighLevel CRM.",
+      "Step 3: Benchmark commercial utility rates with EnergyChoice.us for 10-30% overhead savings in deregulated areas.",
+      "Step 4: Scale technology with custom software development and IT staffing from CDMWeb.store."
+    ],
+    value_proposition: "Eliminate missed revenue with 24/7 AI communication, cut commercial overhead by 10-30%, and scale engineering on demand.",
+    objection_handling: [
+      "Objection: 'Budget constraints' -> Rebuttal: EnergyChoice commercial utility rate savings typically save enough to fully fund your CRM and AI phone agents.",
+      "Objection: 'Too complicated to set up' -> Rebuttal: Our team handles turnkey setup in under 48 hours with zero disruption to your daily operations."
+    ]
+  };
+};
+
 const getBusinessHours = (openNow?: boolean): string => {
   if (openNow === true) return "9:00 AM - 6:00 PM";
   if (openNow === false) return "Currently Closed - Try 9:00 AM - 5:00 PM";
@@ -393,6 +572,7 @@ function generateFallbackLeads(industryName: string, location: string, count: nu
       business_type: 'Local Business',
       pain_points: getIndustryPainPoints(industryName),
       suggested_products: getIndustrySolutions(industryName),
+      sales_strategy: getIndustrySalesStrategy(industryName),
       best_contact_time: '9:00 AM - 5:00 PM',
       google_activity_score: Math.floor(Math.random() * 40) + 60,
       ai_insights: `Fallback lead for ${industryName} industry with standard business profile.`,
